@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slideshow</title>
+  </head>
+  <body>
+    <h1>Tro på det...</h1>
+    <img src="billeder/img1.png" alt="billede" />
+    <button>Videre</button>
+    <p>Billeder venligst udlånt af Rasmus Bregnhøi</p>
+
+    <script>
+      const knap = document.querySelector("button");
+      const img = document.querySelector("img");
+      let tal = 1;
+
+      knap.addEventListener("click", skiftBillede);
+
+      function skiftBillede() {
+        if (tal < 8) {
+          //tæl op
+          tal++;
+          console.log(img[tal]);
+          img.src = "billeder/img" + tal + ".png";
+        } else {
+          tal = 1;
+          img.src = "billeder/img" + tal + ".png";
+        }
+
+        if (tal == 8) {
+          knap.textContent = "Forfra";
+        } else {
+          knap.textContent = "Videre";
+        }
+      }
+    </script>
+  </body>
+</html>
